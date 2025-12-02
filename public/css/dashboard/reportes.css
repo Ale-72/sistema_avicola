@@ -1,0 +1,285 @@
+/* ============================================
+   ESTILOS PARA REPORTES Y ANALÍTICAS
+   ============================================ */
+
+/* Cards de métricas */
+.metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metricCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.metricCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    transform: translate(30%, -30%);
+}
+
+.metricHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.metricIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.metricValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.metricLabel {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.75rem;
+}
+
+.metricChange {
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.metricChange.positive {
+    color: #2ecc71;
+}
+
+.metricChange.negative {
+    color: #e74c3c;
+}
+
+/* Contenedores de gráficos */
+.chartContainer {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chartHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.chartTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chartCanvas {
+    position: relative;
+    height: 300px;
+}
+
+/* Filtros de fecha */
+.dateFilters {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filterLabel {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.filterInput {
+    padding: 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.filterInput:focus {
+    outline: none;
+    border-color: rgba(52, 152, 219, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.quickFilters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.quickFilter {
+    padding: 0.5rem 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    color: #3498db;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quickFilter:hover {
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.quickFilter.active {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Botones de exportación */
+.exportButtons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btnExport {
+    padding: 0.65rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnExport.pdf {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #fff;
+    border: none;
+}
+
+.btnExport.excel {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: #fff;
+    border: none;
+}
+
+.btnExport:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tablas de reportes */
+.reportTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.reportTable th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.reportTable td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.reportTable tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Grid para gráficos */
+. chartsGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos para impresión (PDF) */
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .admin-header,
+    .header-actions,
+    .dateFilters,
+    .exportButtons,
+    .btn,
+    .sidebar {
+        display: none !important;
+    }
+
+    .chartContainer,
+    .metricCard {
+        background: #fff;
+        border: 1px solid #ddd;
+        color: #000;
+        break-inside: avoid;
+    }
+
+    .metricValue,
+    .chartTitle {
+        color: #000;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chartsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .metricsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .dateFilters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

@@ -1,0 +1,147 @@
+/* ============================================
+   ESTILOS PARA GESTIÓN DE INVENTARIO
+   ============================================ */
+
+/* Badges de tipos de movimiento */
+.badge-movimiento {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-movimiento.entrada {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.3), rgba(39, 174, 96, 0.2));
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.badge-movimiento.salida {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.3), rgba(192, 57, 43, 0.2));
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.4);
+}
+
+.badge-movimiento.ajuste {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(41, 128, 185, 0.2));
+    color: #3498db;
+    border: 1px solid rgba(52, 152, 219, 0.4);
+}
+
+.badge-movimiento.transferencia {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(142, 68, 173, 0.2));
+    color: #9b59b6;
+    border: 1px solid rgba(155, 89, 182, 0.4);
+}
+
+.badge-movimiento.devolucion {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.3), rgba(211, 133, 18, 0.2));
+    color: #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.4);
+}
+
+/* Indicadores de nivel de stock */
+.stock-nivel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.stock-nivel.normal {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.3), rgba(39, 174, 96, 0.2));
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.4);
+}
+
+.stock-nivel.bajo {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.3), rgba(211, 133, 18, 0.2));
+    color: #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.4);
+}
+
+.stock-nivel.critico {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.3), rgba(192, 57, 43, 0.2));
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Valores de stock */
+.stock-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.stock-value.normal {
+    color: #2ecc71;
+}
+
+.stock-value.bajo {
+    color: #f39c12;
+}
+
+.stock-value.critico {
+    color: #e74c3c;
+}
+
+.stock-reservado {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.25rem;
+}
+
+/* Timeline de movimientos (reutilizar de pedidos.css) */
+.movimientos-timeline {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem 0;
+}
+
+/* Formularios de transferencia */
+.transfer-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.transfer-arrow {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    color: #9b59b6;
+    margin: 1rem 0;
+}
+
+/* Stock disponible label */
+.stock-disponible-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stock-disponible-label strong {
+    color: #3498db;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .transfer-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
